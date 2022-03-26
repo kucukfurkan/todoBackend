@@ -1,6 +1,6 @@
 stages:
   - build
-  - unit-test
+  # - unit-test
   - dockerize
   - provider-test
   - deploy_to_production
@@ -11,12 +11,12 @@ build-job:
     - echo "Compiling the code..."
     - echo "Compile complete."
 
-unit-test-job:
- image: golang:1.17-stretch
- stage: unit-test
- script:
-   - go mod download
-   - go test -v ./handler
+# unit-test-job:
+#  image: golang:1.17-stretch
+#  stage: unit-test
+#  script:
+#    - go mod download
+#    - go test -v ./handler
 
 provider_test:
  image: golang:1.17-stretch
