@@ -55,4 +55,4 @@ deploy:
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     - ssh-keyscan -H $STAGING_HOST >> ~/.ssh/known_hosts
   script:
-    - ssh ec2-user@$STAGING_HOST "cd backend-repo && docker-compose down && docker-compose pull && docker-compose up -d && exit"
+    - ssh ec2-user@$STAGING_HOST "cd frontend && docker-compose down && docker-compose pull && docker-compose up -d && exit"
