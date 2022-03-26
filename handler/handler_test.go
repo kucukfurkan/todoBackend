@@ -95,7 +95,7 @@ func TestCreateTodo(t *testing.T) {
 
 	t.Run("Cannot request with empty text",
 		func(t *testing.T) {
-			mongoClient, err := mongo.NewClient(options.Client().ApplyURI("mongodb://mongoadmin:secret@localhost:27017/?authSource=admin"))
+			mongoClient, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://furkannkck:admin@todo.3vz1x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"))
 			assert.Nil(t, err)
 
 			err = mongoClient.Connect(context.Background())
