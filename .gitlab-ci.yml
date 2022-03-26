@@ -37,9 +37,9 @@ dockerize-job:
   services:
     - docker:dind
   script:
-    - docker login -u "mdnsykt" -p "$DOCKER_PASSWORD"
-    - docker build -t mdnsykt/go-backend:latest .
-    - docker push mdnsykt/go-backend:latest
+    - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+    - docker build -t furkannkck/go-backend:latest .
+    - docker push furkannkck/go-backend:latest
     - docker logout
 
 
