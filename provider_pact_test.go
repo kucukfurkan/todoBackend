@@ -1,4 +1,4 @@
-package todo_backend
+package main
 
 import (
 	"Desktop/todo-backend/handler"
@@ -30,7 +30,7 @@ func (s *Settings) create() {
 	s.Host = "127.0.0.1"
 	s.ProviderName = "todo-backend"
 	s.ConsumerName = "todo"
-	s.BrokerBaseURL = fmt.Sprintf("https://furkankucuk.pactflow.io")
+	s.BrokerBaseURL = fmt.Sprintf("https://furkankucuk.pactflow.io/")
 	s.ConsumerTag = "master"
 	s.ProviderVersion = "1.0.0"
 	s.ConsumerVersion = "1.0.0"
@@ -38,7 +38,7 @@ func (s *Settings) create() {
 func (s *Settings) getPactURL(useLocal bool) string {
 	// Local pact file or remote based urls (Pact Broker)
 	var pactURL string
-	pactURL = "./pacts/todo-todo-backend.json"
+	//pactURL = "./pacts/todo-todo-backend.json"
 	pactURL = "https://furkankucuk.pactflow.io/pacts/provider/todo-backend/consumer/todo/latest"
 
 	return pactURL
@@ -69,7 +69,7 @@ func TestProvider(t *testing.T) {
 		ProviderBaseURL: fmt.Sprintf("http://%s:%d", settings.Host, 8081),
 		ProviderVersion: settings.ProviderVersion,
 		BrokerUsername:  settings.BrokerUsername,
-		BrokerToken:     "9rCrv_BBppRPFIroVB7UKQ",
+		BrokerToken:     "HYMZJAIH-5wJvcZqktHKvw",
 		BrokerURL:       settings.BrokerBaseURL,
 		BrokerPassword:  settings.BrokerPassword,
 		Tags:            []string{settings.ConsumerTag},
