@@ -8,7 +8,15 @@
 - Pact
 
 ## Scripts
-- To run project go run main.go
+To run project 
+- go run main.go
+
+To run back-end unit tests 
+- go test -v
+
+To run CDC provider test
+- go test -run TestProvider ./ -v -count 1
+
 
 ## Related repositories
 - Acceptance Test Repo: https://gitlab.com/furkan.moda/todo-acceptance-test
